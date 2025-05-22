@@ -1,0 +1,29 @@
+A principios del siglo XVIII, James Bradley, un astrónomo británico,
+trató de medir el paralaje de las estrellas, los resultados se los cuenta
+en una carta a Edmund Halley, enviada en 1727, contándole la historia y resultados.
+
+Junto con Samuel Molyneux, y George Graham, construyeron un instrumento
+para medir dicho paralaje, en el año de 1725, junto con otro instrumento
+algo diferente, pero con el mismo objetivo, creado por él mismo.
+
+El 3 de diciembre de 1725, empezaron sus observaciones, tomando la 
+estrella gamma Draconis como referencia, una estrella muy brillante
+cercana al cenit, vista desde Inglaterra. 
+
+Hicieron algunas observaciones el 5, 11 y 12 de diciembre, sin notar
+ningún cambio significativo. 
+
+Sin embargo el 17 de diciembre, sólo por casualidad, decidieron observar
+la estrella, encontrando la estrella ligeramente más al sur.
+
+Creyendo que erra un error de observación, decidieron repetir la observación
+el 20 de diciembre, y encontraron que la estrella había cambiado de posición
+aún más al sur.
+
+La principal sospecha a estos resultados fue la construcción del instrumento,
+pero tras convencerse de la precisión del instrumento, decidieron tomar los 
+datos.
+
+Haciendo un análisis de los datos que tenían anteriormente (con otros instrumentos), 
+dedujeron que la estrella se desplazaría al norte. Tras confirmar dicho
+análisis, encontraron la periodicidad anual de dicho fenómeno.

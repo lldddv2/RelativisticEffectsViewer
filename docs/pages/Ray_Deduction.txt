@@ -1,0 +1,78 @@
+Hagamos una deducción inicial con un solo rayo de Luz
+visto desde el cenit, algo como lo observado por Bradley.
+
+// Insertar imagen inicial
+
+Procedamos a aplicar las reglas de transformación de 
+velocidades. Asumamos que nos movemos en la dirección
+$x$ con velocidad $u_x=u$ y el rayo viene desde la dirección $y$.
+
+$$
+\begin{align*}
+v_x &= \frac{v_x - u_x}{1 - \frac{u_x v_x}{c^2}} \\
+v_y &= \frac{v_y}{\gamma(1 - \frac{u_x v_x}{c^2})}
+\end{align*}
+$$
+
+Nuestro vector de la velocidad de la luz es
+$\vec v = (0, -c, 0)$, por lo que la transformación queda:
+
+$$
+\begin{align*}
+v_x &= \frac{0 - u}{1 - \frac{u \cdot 0}{c^2}} = -u \\
+v_y &= \frac{-c}{\gamma(1 - \frac{u \cdot 0}{c^2})} = -\frac{c}{\gamma}
+\end{align*}
+$$
+
+Como $\gamma \geq 1$, $c/\gamma \leq c$, por lo que así quedaría 
+la representación de como cambia la magnitud 
+
+// insertar interactivo.
+
+Y... Qué pasa con la magnitud de la velocidad? Calculemos:
+
+$$
+\begin{align*}
+v^2 &= v_x^2 + v_y^2 \\
+&= (-u_x)^2 + \left(-\frac{c}{\gamma}\right)^2 \\
+&= u^2 + \frac{c^2}{\gamma^2} \\
+&= u^2 + \frac{c^2}{1 + \frac{u^2}{c^2}} \\
+&= u^2 + c^2 - \frac{u^2 c^2}{c^2} \\
+&= c^2 + u^2 - u^2 \\
+&= c^2
+\end{align*}
+$$
+Por lo que la magnitud de la velocidad de la luz no cambia, 
+pero si su dirección.
+
+Pero este es un caso particular, veamos que pasa en general.
+
+
+Asumamos que la estrella está en el plano $xy$
+a un ángulo $\theta'$ arbitrario.
+
+// Insertar imagen
+
+Las componentes de la velocidad serán 
+$\vec v = (-c\cos\theta', -c\sin\theta', 0)$
+
+Aplicando la transformación de velocidades:
+
+$$
+\begin{align*}
+v_x &= \frac{-c\cos\theta' - u}{1 - \frac{u(-c\cos\theta')}{c^2}} \\
+&= -\frac{c\cos\theta' + u}{1 + \frac{u\cos\theta'}{c}} \\
+v_y &= \frac{-c\sin\theta'}{\gamma(1 - \frac{u(-c\cos\theta')}{c^2})} \\
+&= -\frac{c\sin\theta'}{\gamma(1 + \frac{u\cos\theta'}{c})}
+\end{align*}
+$$
+
+Si definimos $\theta$ como el nuevo ángulo, podemos escribir
+
+$$
+\begin{align*}
+\tan \theta = \frac{v_y}{v_x} = \frac{-c\sin\theta'}{\gamma(1 + \frac{u\cos\theta'}{c})} \cdot \frac{1 + \frac{u\cos\theta'}{c}}{-c\cos\theta' - u} \\
+&= \frac{c\sin\theta'}{\gamma(c\cos\theta' + u)}
+\end{align*}
+$$
+

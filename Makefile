@@ -1,6 +1,6 @@
 # Variables
 SRC_DIR = ./src
-OUTPUT_DIR = ./build
+OUTPUT_DIR = ./docs
 TEMPLATE_DIR = ./template
 INCLUDE_DIR = ./include
 PRELOAD_DIR = ./assets

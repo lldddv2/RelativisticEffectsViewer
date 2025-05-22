@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="page.css" />
+    <title>Relativistic aberration</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div
+      style="
+        background-color: rgba(255, 254, 254, 0.153);
+        height: calc(100vh - 20px);
+        width: calc(100vw - 30px);
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+      "
+    >
+      <h1>Explanation</h1>
+      <!-- side-side -->
+      <div style="display: flex; justify-content: space-between">
+        <div id="text">
+          <ul class="nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="#"
+                onclick="showSection('aberration')"
+                >Aberration</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showSection('deformation')"
+                >Deformation</a
+              >
+            </li>
+          </ul>
+
+          <!-- Secciones -->
+          <div id="aberration" class="main-section d-none">
+            <ul class="nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#"
+                  onclick="showSubSection('history')"
+                  >History</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="showSubSection('ray-deduction')"
+                  >Deduction</a
+                >
+              </li>
+            </ul>
+
+            <div id="history" class="sub-section">
+              <h2>History</h2>
+              <div class="scrollable">
+                <div>
+                  <div class="slide">
+                    <div id="Bradley" class="img">
+                      James Bradley (1693-1762)
+                    </div>
+                    <p>
+                      A principios del siglo XVIII, James Bradley, un astrónomo
+                      británico, trató de medir el paralaje de las estrellas,
+                      los resultados se los cuenta en una carta a Edmund Halley,
+                      enviada en 1727, contándole la historia y resultados.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      Junto con Samuel Molyneux, y George Graham, construyeron
+                      un instrumento para medir dicho paralaje, en el año de
+                      1725, junto con otro instrumento algo diferente, pero con
+                      el mismo objetivo, creado por él mismo.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      El 3 de diciembre de 1725, empezaron sus observaciones,
+                      tomando la estrella gamma Draconis como referencia, una
+                      estrella muy brillante cercana al cenit, vista desde
+                      Inglaterra.
+                    </p>
+                    <div id="draco" class="img">Gamma Draconis</div>
+                  </div>
+                  <div class="slide">
+                    <div
+                      class="img"
+                      style="background-image: url(./images/3_5_11.png)"
+                    ></div>
+                    <p>
+                      Hicieron algunas observaciones el 5, 11 y 12 de diciembre,
+                      sin notar ningún cambio significativo.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      El 17 de diciembre, sólo por curiosidad, observaron la
+                      estrella, encontrándola ligeramente más al sur.
+                    </p>
+                    <div
+                      class="img"
+                      style="background-image: url(./images/11_17.png)"
+                    ></div>
+                  </div>
+                  <div class="slide">
+                    <div
+                      class="img"
+                      style="background-image: url(./images/11_17_20.png)"
+                    ></div>
+                    <p>
+                      Creyendo que era un error de observación, decidieron
+                      repetir la observación el 20 de diciembre, y encontraron
+                      que la estrella había cambiado de posición aún más al sur.
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      La principal sospecha a estos resultados fue la
+                      construcción del instrumento, pero tras convencerse de la
+                      precisión del instrumento, decidieron tomar los datos.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <div
+                      class="img"
+                      style="
+                        background-image: url(./images/march_september.png);
+                      "
+                    ></div>
+                    <p>
+                      Haciendo un análisis de los datos que tenían anteriormente
+                      (con otros instrumentos), dedujeron que la estrella se
+                      desplazaría al norte. Tras confirmar dicho análisis,
+                      encontraron la periodicidad anual de dicho fenómeno.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://www.jstor.org/stable/pdf/27900373.pdf?refreqid=fastly-default%3A2951d21c79482bb5250777c38c729d3f&ab_segments=&initiator=&acceptTC=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Reference</a
+              >
+            </div>
+            <div id="ray-deduction" class="sub-section d-none">
+              <h2>Deduction</h2>
+              <div class="scrollable">
+                <div>
+                  <div class="slide">
+                    <div
+                      class="img"
+                      style="
+                        background-image: url(./images/ilustracion.png);
+                        height: 400px;
+                      "
+                    ></div>
+                    <p>
+                      Hagamos una deducción inicial con un solo rayo de Luz
+                      visto desde el cenit, algo como lo observado por Bradley.
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      Procedamos a aplicar las reglas de transformación de
+                      velocidades. Asumamos que nos movemos en la dirección
+                      \(x\) con velocidad \(u_x=u\) y el rayo viene desde la
+                      dirección \(y\) con velocidad \(\vec v\).
+                    </p>
+                    <p>
+                      \[ \begin{align*} v_x &= \frac{v_x - u_x}{1 - \frac{u_x
+                      v_x}{c^2}} \\ v_y &= \frac{v_y}{\gamma(1 - \frac{u_x
+                      v_x}{c^2})} \end{align*} \]
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      Nuestro vector de velocidad para la luz es \(\vec v = (0,
+                      -c, 0)\), por lo que la transformación queda:
+                    </p>
+                    <p>
+                      \[ \begin{align*} v_x &= \frac{0 - u}{1 - \frac{u \cdot
+                      0}{c^2}} = -u \\ v_y &= \frac{-c}{\gamma(1 - \frac{u \cdot
+                      0}{c^2})} = -\frac{c}{\gamma} \end{align*} \]
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <div class="chart-container">
+                      <div id="plotlyDiv"></div>
+                    </div>
+                    <p>
+                      Como \(\gamma \geq 1\), \(c/\gamma \leq c\), por lo que
+                      así quedaría la representación de como cambia la magnitud
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      La magnitud de la velocidad de la luz no cambia, pero si
+                      su dirección.
+                    </p>
+                    <p style="font-size: 16px">
+                      \[ \begin{align*} v^2 &= v_x^2 + v_y^2 \\ &= (-u_x)^2 +
+                      \left(-\frac{c}{\gamma}\right)^2 \\ &= u^2 +
+                      \frac{c^2}{\gamma^2} \\ &= u^2 + (c^2)(1 -
+                      \frac{u^2}{c^2}) \\ &= u^2 + c^2 - \frac{u^2 c^2}{c^2} \\
+                      &= c^2 + u^2 - u^2 \\ &= c^2 \end{align*} \]
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      Pero este es un caso particular, veamos que pasa en
+                      general.
+                    </p>
+                    <div id="images" style="position: relative; top: 50px">
+                      <div id="interactive">
+                        <img
+                          id="earth"
+                          src="images/earth.png"
+                          alt="Earth"
+                          style="width: 200px; height: 200px"
+                        />
+                        <div
+                          id="angle"
+                          style="
+                            background-color: rgba(255, 0, 0, 0.289);
+                            height: 310px;
+                            width: 310px;
+                            position: absolute;
+
+                            border-radius: 50%;
+                            border: 10px solid orangered;
+                            transform: rotate(-90deg) translate(50%, -50%);
+                          "
+                          class="cero"
+                        ></div>
+
+                        <img
+                          id="ligth"
+                          src="images/arrows/10.png"
+                          alt="Earth"
+                          style="scale: 1.5"
+                        />
+                        <img
+                          id="phantomStar"
+                          src="images/star.png"
+                          alt="Start"
+                          style="
+                            opacity: 50%;
+                            width: 50px;
+                            height: 50px;
+                            left: calc(55% - 9px);
+                            top: -40px;
+                          "
+                        />
+                        <img id="star" src="images/star.png" alt="Start" />
+
+                        <img
+                          id="arrow-image"
+                          src="images/arrows/0.png"
+                          alt="Earth"
+                          style="
+                            scale: 1.5;
+                            position: absolute;
+                            left: calc(50% - 9px);
+                            top: calc(50% - 15px);
+                            transform: translate(50%, 50%);
+                            rotate: -90deg;
+                          "
+                        />
+
+                        <div
+                          class="slidecontainer"
+                          style="
+                            position: absolute;
+                            left: 0%;
+                            top: 100%;
+                            width: 100%;
+                          "
+                        >
+                          <input
+                            id="slider-interact"
+                            type="range"
+                            min="0"
+                            max="0.99"
+                            step="0.01"
+                            value="0"
+                            class="slider"
+                            style="width: 100%"
+                          />
+                          <label
+                            id="vel-label"
+                            for="slider-interact"
+                            style="color: white; text-align: center"
+                            >Velocity = 0.0 c</label
+                          >
+                          <label
+                            id="angle-label"
+                            for="slider-interact"
+                            style="color: white; text-align: center"
+                            >Angle = 0.0°</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="slide">
+                    <div
+                      class="img"
+                      style="
+                        background-image: url(./images/ilustracion_angulo_cualquiera.png);
+                        height: 400px;
+                      "
+                    ></div>
+                    <p>
+                      Asumamos que la estrella está en el plano \(xy\) a un
+                      ángulo \(\theta'\) arbitrario.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      Las componentes de la velocidad serán \(\vec v =
+                      (-c\cos\theta', -c\sin\theta', 0)\)
+                    </p>
+                    <div
+                      class="img"
+                      style="
+                        background-image: url(./images/Descomposicion_vectorial.png);
+                        height: 400px;
+                      "
+                    ></div>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      Aplicando la transformación de velocidades: \[
+                      \begin{align*} v_x &= \frac{v_x - u}{1 - \frac{u
+                      v_x}{c^2}} \\ v_y &= \frac{v_y}{\gamma(1 - \frac{u
+                      v_x}{c^2})} \end{align*} \]
+                    </p>
+                    <p>
+                      \[ \begin{align*} v_x &= \frac{-c\cos\theta' - u}{1 -
+                      \frac{u(-c\cos\theta')}{c^2}} \\ &= -\frac{c\cos\theta' +
+                      u}{1 + \frac{u\cos\theta'}{c}} \\ v_y &=
+                      \frac{-c\sin\theta'}{\gamma(1 -
+                      \frac{u(-c\cos\theta')}{c^2})} \\ &=
+                      -\frac{c\sin\theta'}{\gamma(1 + \frac{u\cos\theta'}{c})}
+                      \end{align*} \]
+                    </p>
+                  </div>
+
+                  <div class="slide">
+                    <p>
+                      Si definimos \( \theta \) como el nuevo ángulo, podemos
+                      llegar a que: \[ \tan \theta =
+                      \frac{c\sin\theta'}{\gamma(c\cos\theta' + u)} \]
+                    </p>
+                    <p>
+                      \[ \begin{align*} \tan \theta &= \frac{v_y}{v_x} \\ &=
+                      \frac{-c\sin\theta'}{\gamma(1 + \frac{u\cos\theta'}{c})}
+                      \cdot \frac{1 + \frac{u\cos\theta'}{c}}{-c\cos\theta' - u}
+                      \\ &= \frac{c\sin\theta'}{\gamma(c\cos\theta' + u)}
+                      \end{align*} \]
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <div id="plotlyDiv2"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="wavefront-deduction" class="sub-section d-none">
+              <h2>Wavefront deduction</h2>
+              <p>Contenido de Wavefront deduction</p>
+            </div>
+          </div>
+
+          <div id="deformation" class="main-section">
+            <div id="deformation-deduction">
+              <h2>Deformation</h2>
+              <div class="scrollable">
+                <div>
+                  <div class="slide">
+                    <!-- photon animation -->
+                    <div id="plotlyDiv3"></div>
+                    <p>
+                      Supongamos que una partícula se mueve a una velocidad de
+                      0.8c y emite un fotón. Otra partícula sólo podrá acceder a
+                      la información de la posición de la partícula emisora en
+                      el instante de emisión del fotón.
+                    </p>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      Ahora asumamos que son 2 particulas que se mueven con la
+                      misma velocidad, pero emiten fotones en diferentes
+                      instantes, de modo que ambos fotones llegan a la misma
+                      partícula al mismo tiempo.
+                    </p>
+                    <div id="plotlyDiv4"></div>
+                  </div>
+                  <div class="slide">
+                    <p>
+                      Como se observa en la animación, la información que le llega
+                      al observador indica que la distancia entre los dos emisores es
+                      mayor a la real. A esto se le conoce como deformación/distorsión.
+                      <a href="https://www.spacetimetravel.org/tompkins/4">Explicación</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="page.js"></script>
+  </body>
+</html>

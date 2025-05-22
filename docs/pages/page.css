@@ -1,0 +1,158 @@
+:root {
+  --main-color: rgba(48, 48, 48, 0.672);
+  --secondary-color: rgba(59, 59, 59, 0.706);
+  --tertiary-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: monospace;
+  padding: 10px;
+}
+* {
+  color: white;
+  font-family: monospace;
+}
+
+div {
+  word-wrap: break-word;
+  font-size: 12px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* horizontal */
+  display: flex;
+}
+
+button,
+li {
+  color: #fff;
+  background-color: #777777;
+  padding: 15px 30px 15px 30px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: "Press Start 2P", system-ui;
+  border: 0;
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,
+    0px 10px #00000038, 5px 5px #00000038, -5px 5px #00000038,
+    inset 0px 5px #ffffff36;
+  cursor: pointer;
+}
+button:active,
+li:active {
+  transform: translateY(5px);
+  box-shadow: 0px 5px black, 0px -5px black, 5px 0px black, -5px 0px black,
+    inset 0px 5px #00000038;
+}
+
+button:hover,
+li:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+a {
+  font-family: "Press Start 2P", system-ui;
+  /* quit subrayado */
+  text-decoration: none;
+}
+.content-section {
+  margin-top: 20px;
+}
+
+.d-none {
+  display: none;
+}
+
+#interactive {
+  position: relative;
+  height: 250px;
+  width: 250px;
+}
+
+.cero,
+img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* posición con respecto al centro de la imagen*/
+}
+
+#star {
+  width: 50px;
+  height: 50px;
+}
+
+#star:hover {
+  transition: scale 0.3s ease;
+  scale: 1.1;
+  filter: brightness(1.25);
+}
+
+.slide {
+  /* background-color: red; */
+  margin: 20px;
+  display: flex;
+  font-size: 30px;
+
+  p {
+    padding: 20px;
+    padding-right: 100px;
+  }
+
+  .img {
+    background-size: cover;
+    background-position: bottom;
+    transition: all 0.3s ease;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 170px;
+    margin: 20px;
+    margin-right: 100px;
+  }
+}
+
+#Bradley {
+  /* img link  ./images/Bradley.jpg*/
+  width: 180px;
+  height: 250px;
+
+  background-image: url(./images/BradleyPixelart.png);
+  /* ajustar */
+}
+
+#Bradley:hover {
+  background-image: url(./images/Bradley.png);
+}
+
+#draco {
+  /* img link  ./images/Draco.jpg*/
+
+  background-image: url(./images/Draco.png);
+  /* ajustar */
+}
+
+#draco:hover {
+  background-image: url(./images/DracoHover.png);
+}
+
+.scrollable {
+  position: relative;
+  display: flex;
+  
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 500px;  
+}
+
+
+
